@@ -1,0 +1,24 @@
+# Ignore all class files
+*.class
+
+# Ignore backup files created by editors
+*.~ 
+*.swp 
+*.swo
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore build directories
+bin/
+out/
+
+# Ignore IDE-specific files
+*.iml
+.idea/
+.vscode/
+
+# Ignore logs and temporary files
+*.log
+*.tmp
