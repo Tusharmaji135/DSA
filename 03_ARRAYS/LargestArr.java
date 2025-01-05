@@ -1,4 +1,3 @@
-
 public class LargestArr {
   public static int getLargest(int arr[]) {
     int large = Integer.MIN_VALUE; // -infinity
