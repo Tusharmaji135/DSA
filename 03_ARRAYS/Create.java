@@ -4,9 +4,10 @@ public class Create {
   public static void creat(){
     // int num[] = {1,2,3};
     int marks[] = new int[5];
-    Scanner sc = new Scanner(System.in);
-    for (int i = 0; i < marks.length; i++) {
-      marks[i] = sc.nextInt();
+    try (Scanner sc = new Scanner(System.in)) {
+      for (int i = 0; i < marks.length; i++) {
+        marks[i] = sc.nextInt();
+      }
     }
     for (int i = 0; i < marks.length; i++) {
       System.out.print(marks[i]+" ");
