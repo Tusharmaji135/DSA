@@ -3,77 +3,73 @@ import java.util.Collections;
 
 public class Sorting {
 
+  // Selection Sort implementation
   public static void selectionSort(Integer arr[]) {
     for (int i = 0; i < arr.length - 1; i++) {
-      int min = i;
-      for (int j = i + 1; j < arr.length; j++) { // Start j from i+1 to avoid redundant comparison
+      int min = i; // Assume the first element of the unsorted part is the smallest
+      for (int j = i + 1; j < arr.length; j++) {
         if (arr[j] < arr[min]) {
-          min = j; // Update min index if a smaller element is found
+          min = j; // Update the index of the smallest element
         }
       }
-      // Perform swap only once per outer loop iteration
+      // Swap the smallest element with the first element of the unsorted part
       int temp = arr[i];
       arr[i] = arr[min];
       arr[min] = temp;
     }
   }
 
+  // Bubble Sort implementation
   public static void bubbleSort(Integer arr[]) {
-    // Get the length of the array
     int n = arr.length;
-
-    // Outer loop to iterate through the entire array
     for (int i = 0; i < n - 1; i++) {
-      // Initialize a flag to track if any swaps were made in this iteration
-      boolean didSwap = false;
-
-      // Inner loop to compare adjacent elements
-      // Start from the current position `i` and go up to the last unsorted element
+      boolean didSwap = false; // Track if any swaps were made in the current pass
       for (int j = i + 1; j < n; j++) {
-        // Check if the current element is greater than the next element
         if (arr[i] > arr[j]) {
-          // Swap the two elements to place the smaller element before the larger one
+          // Swap elements if they are in the wrong order
           int temp = arr[i];
           arr[i] = arr[j];
           arr[j] = temp;
-          // Mark that a swap was performed
           didSwap = true;
         }
       }
-      // If no swaps were made during this iteration, the array is already sorted
+      // Exit early if no swaps were made (array is already sorted)
       if (!didSwap) {
         break;
       }
     }
   }
 
+  // Insertion Sort implementation
   public static void insertionSort(Integer arr[]) {
     for (int i = 1; i < arr.length; i++) {
-      int temp = arr[i];
+      int temp = arr[i]; // Current element to be inserted
       int prev = i - 1;
+      // Shift elements of the sorted part to the right to create the correct position
       while (prev >= 0 && arr[prev] > temp) {
         arr[prev + 1] = arr[prev];
         prev--;
       }
+      // Insert the current element into the correct position
       arr[prev + 1] = temp;
     }
   }
 
+  // Counting Sort implementation (only works for non-negative integers)
   public static void countingSort(Integer arr[]) {
-
-    // get largest number
+    // Find the largest number in the array
     int largest = Integer.MIN_VALUE;
     for (int i = 0; i < arr.length; i++) {
       largest = Math.max(largest, arr[i]);
     }
 
-    //frequency array
+    // Create a frequency array
     int count[] = new int[largest + 1];
     for (int i = 0; i < arr.length; i++) {
-      count[arr[i]]++; 
+      count[arr[i]]++;
     }
 
-    // sorting
+    // Sort the array using the frequency array
     int j = 0;
     for (int i = 0; i < count.length; i++) {
       while (count[i] > 0) {
@@ -85,18 +81,15 @@ public class Sorting {
   }
 
   public static void main(String[] args) {
-    Integer arr[] = {1,4,1,3,2,4,3,7 };
+    Integer arr[] = {1, 4, 1, 3, 2, 4, 3, 7};
 
     // selectionSort(arr);
     // bubbleSort(arr);
     // insertionSort(arr);
-    // Arrays.sort(arr, Collections.reverseOrder());
+    // Arrays.sort(arr, Collections.reverseOrder()); // Sort in descending order
     countingSort(arr);
 
+    // Print the sorted array
     System.out.println(Arrays.toString(arr));
-    
-
-
   }
-
 }
