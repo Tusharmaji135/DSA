@@ -1,4 +1,4 @@
-public class SubArr {
+public class SubArray {
   // Brute Forse
   public static void printSubArr(int nums[]) {
 

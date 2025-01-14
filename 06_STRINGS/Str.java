@@ -1,6 +1,6 @@
 // import java.util.Scanner;
 
-import java.util.Arrays;
+// import java.util.Arrays;
 
 public class Str {
   
@@ -21,9 +21,9 @@ public class Str {
     // System.out.println("NAME : "+name.length());
     // System.out.println("NAME : "+name.concat(str2)); //or name + str2
     // System.out.println(name.charAt(1));
-    // for (int i = 0; i < name.length(); i++) {
-    //   System.out.print(name.charAt(i)+"-");
-    // }
+    for (int i = 0; i < name.length(); i++) {
+      System.out.print(name.charAt(i)+"-");
+    }
     // System.out.println(Arrays.sort(name.toCharArray()));
 
   }
