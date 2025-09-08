@@ -20,6 +20,7 @@
 
 ## Advanced Topics
 - Strings
+- Shopping Cart DSA (ArrayList, Search Algorithms, Queue)
 - Bit Manipulation
 - OOPs
 - Recursion
